@@ -35,10 +35,6 @@ GO_PKG:=github.com/docker
 include $(INCLUDE_DIR)/package.mk
 include ../../lang/golang/golang-package.mk
 
-define Package/docker-ce/config
-  source "$(SOURCE)/Config.in"
-endef
-
 define Package/docker-ce
   SECTION:=utils
   CATEGORY:=Utilities
@@ -53,6 +49,10 @@ endef
 define Package/docker-ce/description
   Docker Engine is used by millions enables containerized applications
   to run anywhere consistently on any infrastructure.
+endef
+
+define Package/docker-ce/config
+  source "$(SOURCE)/Config.in"
 endef
 
 define Build/Configure
